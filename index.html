@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div id="particles-container"></div>
+    
+    <div class="corner-accent top-left">+</div>
+    <div class="corner-accent top-right">+</div>
+    <div class="corner-accent bottom-left">+</div>
+    <div class="corner-accent bottom-right">+</div>
+
+    <div class="music-status hidden" id="music-indicator">
+        <div class="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <span class="music-text">Playing: Ligaw Tingin</span>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="https://archive.org/download/zildjian-parma-ligaw-tingin/Zildjian%20Parma%20-%20Ligaw%20Tingin.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="cover-screen" id="cover">
+        <p class="project-tag">Archive</p>
+        <div class="accent-line"></div>
+        <h1 class="cover-title">Shared Space</h1>
+        <p class="cover-sub">I created a quick draft of something I wanted you to see. It’s private, just for you.</p>
+        <button id="unlock-btn" class="btn btn-primary">Open Document</button>
+    </div>
+
+    <div class="note-wrapper hidden" id="secret-note">
+        <header class="note-header">
+            <div class="header-top-meta">
+                <p class="date">July 2026</p>
+                <span class="status-badge" id="doc-status">● Syncing Document...</span>
+            </div>
+            <div class="header-line"></div>
+        </header>
+
+        <div id="story-section">
+            <div class="note-body">
+                <p class="salutation">Hi Audrey,</p>
+                <p>I wanted to share a quick, quiet story with you. I couldn't really bring myself to say this in person because I get way too shy.</p>
+                <p>It all actually started that one time I saw you practicing inside the org room. I don't know, you just instantly caught my attention. You looked so cute but had this effortless confidence while dancing, especially whenever you smiled.</p>
+                <p>The night after that, you were still on my mind, so I built up the courage to ask some of our mutuals for your name. I looked you up on Facebook until I found your account. And honestly, it felt like fate was teasing me because over the next few days, I kept running into you around campus.</p>
+                <p>I don't know if you ever noticed, but every time we cross paths, I feel like I'm completely melting whenever we happen to make eye contact, or even when you're just standing close to me. My heart just starts racing like crazy.</p>
+                <p>To be completely honest, I had a lot of doubts. I know it's too fast, but I figured it's better to tell you now than to wait and have someone else get ahead of me. I don't know if you already have a special someone right now, or if you're even into girls. But I figured it's much better to just be honest with myself and with you. All I really want to do right now is to let you know how I feel.</p>
+                <p>I really find you interesting, and I genuinely want to get to know you. I know we don't know each other well yet, and there's absolutely no pressure at all.</p>
+            </div>
+            <footer class="action-area">
+                <button id="next-btn" class="btn btn-primary">Next Section</button>
+            </footer>
+        </div>
+
+        <div id="question-section" class="hidden">
+            <main>
+                <p class="question-intro">
+                    If it's alright with you and it wouldn't be any trouble... I just want to ask you directly...
+                </p>
+                <h2 class="question">Would it be alright if I get to know you better?</h2>
+            </main>
+            <footer class="action-area">
+                <button id="yes-btn" class="btn btn-primary">Sure, I'd like that</button>
+                <button id="no-btn" class="btn btn-secondary">I'd prefer not to, sorry</button>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
