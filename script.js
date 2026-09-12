@@ -1,5 +1,6 @@
 const unlockBtn = document.getElementById('unlock-btn');
 const nextBtn = document.getElementById('next-btn');
+const nameInput = document.getElementById('name-input');
 
 const coverScreen = document.getElementById('cover');
 const secretNote = document.getElementById('secret-note');
@@ -12,6 +13,9 @@ const bgMusic = document.getElementById('bg-music');
 const musicIndicator = document.getElementById('music-indicator');
 const docStatus = document.getElementById('doc-status');
 const particlesContainer = document.getElementById('particles-container');
+
+// Fallback name if left empty
+let userName = "there"; 
 
 function startFloatingParticles() {
     const assets = ['♥', '♪', '♫', '♬'];
@@ -38,6 +42,11 @@ function startFloatingParticles() {
 }
 
 unlockBtn.addEventListener('click', () => {
+    const enteredName = nameInput.value.trim();
+    if (enteredName !== "") {
+        userName = enteredName;
+    }
+
     bgMusic.currentTime = 58; 
     bgMusic.play().catch(err => console.log("Audio play deferred."));
     
@@ -87,7 +96,7 @@ yesBtn.addEventListener('click', () => {
             </header>
             <h1 class="salutation" style="text-align: center; margin-top: 20px;">Thank you for saying yes.</h1>
             <p style="text-align: center; color: #444; font-weight: 300; line-height: 1.8; padding-bottom: 20px; margin: 0 auto; max-width: 90%;">
-                That means a lot to me, Audrey. <br><br>
+                That means a lot to me, ${userName}. <br><br>
                 Good luck with your performance for the Freshman Walk this July 16! I know you'll do amazing. If it's alright with you, I'd love to take a photo with you at our CSSOC photo booth after your performance! 😊✨
             </p>
         `;
@@ -109,7 +118,7 @@ noBtn.addEventListener('click', () => {
             </header>
             <h1 class="salutation" style="text-align: center; margin-top: 20px;">Are you sure about that?</h1>
             <p style="text-align: center; color: #444; font-weight: 300; line-height: 1.8; margin-bottom: 25px;">
-                No pressure at all, Audrey, but I just want to make sure you didn't click it by mistake. 
+                No pressure at all, ${userName}, but I just want to make sure you didn't click it by mistake. 
             </p>
             <footer class="action-area">
                 <button id="final-no-btn" class="btn btn-primary">Yes, I'm sure</button>
@@ -155,7 +164,7 @@ noBtn.addEventListener('click', () => {
                     </header>
                     <h1 class="salutation" style="text-align: center; margin-top: 20px;">Thank you for saying yes.</h1>
                     <p style="text-align: center; color: #444; font-weight: 300; line-height: 1.8; padding-bottom: 20px; margin: 0 auto; max-width: 90%;">
-                        That means a lot to me, Audrey. <br><br>
+                        That means a lot to me, ${userName}. <br><br>
                         Good luck with your performance for the Freshman Walk this July 16! I know you'll do amazing. If it's alright with you, I'd love to take a photo with you at our CSSOC photo booth after your performance!
                     </p>
                 `;
