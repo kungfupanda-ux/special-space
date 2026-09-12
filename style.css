@@ -22,7 +22,7 @@ body {
     height: 100%;
     background-size: 30px 30px;
     background-image: linear-gradient(to right, rgba(154, 145, 130, 0.04) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(154, 145, 130, 0.04) 1px, transparent 1px);
+                      linear-gradient(to bottom, rgba(154, 145, 130, 0.04) 1px, transparent 1px);
     z-index: 1;
 }
 
@@ -171,8 +171,42 @@ body {
     line-height: 1.7;
     color: #6c6456;
     font-weight: 300;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
+
+/* --- Added styling for the Name Input field --- */
+.input-group {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+#name-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #eae5d9;
+    border-radius: 6px;
+    background-color: #fbf9f5;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #2c2c2c;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#name-input::placeholder {
+    color: #a8a090;
+    font-weight: 300;
+}
+
+#name-input:focus {
+    background-color: #ffffff;
+    border-color: #ce9f8e;
+    box-shadow: 0 4px 15px rgba(206, 159, 142, 0.15);
+}
+/* ------------------------------------------------ */
 
 .note-wrapper {
     background-color: #ffffff;
